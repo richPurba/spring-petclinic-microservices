@@ -133,14 +133,16 @@
                                     <phase>install</phase>
                                     <goals>
                                         <goal>build</goal>
+                                        <goal> push</goal>
                                     </goals>
                                 </execution>
                             </executions>
                             <configuration>
-                                <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                                <imageName>tepetrol/${project.artifactId}</imageName>
                                 <dockerDirectory>${docker.image.dockerfile.dir}</dockerDirectory>
                                 <serverId>docker-hub</serverId>
                                 <registryUrl>https://index.docker.io/v1/</registryUrl>
+                                <tag>prod</tag>
                                 <resources>
                                     <resource>
                                         <targetPath>/</targetPath>
