@@ -53,6 +53,12 @@
                         <groupId>com.spotify</groupId>
                         <artifactId>docker-maven-plugin</artifactId>
                         <version>${docker.plugin.version}</version>
+                        <configuration>
+                            <imageTags>
+                                <imageTag>${project.version}</imageTag>
+                            </imageTags>
+                            <pushImageTag>true</pushImageTag>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>

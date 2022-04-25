@@ -130,21 +130,23 @@
                             <version>${docker.plugin.version}</version>
                             <executions>
                                 <execution>
+                                    <id>build-image</id>
                                     <phase>install</phase>
                                     <goals>
                                         <goal>build</goal>
-                                        <goal> push</goal>
                                     </goals>
                                 </execution>
                             </executions>
                             <configuration>
                                 <imageName>tepetrol/${project.artifactId}</imageName>
+                                <newName>tepetrol/${project.artifactId}/${project.version}</newName>
                                 <dockerDirectory>${docker.image.dockerfile.dir}</dockerDirectory>
                                 <serverId>docker-hub</serverId>
                                 <registryUrl>https://index.docker.io/v1/</registryUrl>
                                 <imageTags>
                                     <imageTag>${project.version}</imageTag>
                                 </imageTags>
+                                <pushImageTag>true</pushImageTag>
                                 <resources>
                                     <resource>
                                         <targetPath>/</targetPath>
